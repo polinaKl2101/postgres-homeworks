@@ -15,4 +15,5 @@ SELECT * INTO products_out_of_stock FROM products WHERE discontinued = 1
 -- Для 4-го пункта может потребоваться удаление ограничения, связанного с foreign_key. Подумайте, как это можно решить, чтобы связь с таблицей order_details все же осталась.
 
 ALTER TABLE order_details DROP CONSTRAINT fk_order_details_products;
-UPDATE products SET discontinued=0
+DELETE FROM products WHERE discontinued = 1;
+
